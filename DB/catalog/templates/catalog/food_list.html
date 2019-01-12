@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Food List</h1>
+
+    {% if food_list %}
+    <ul>
+
+      {% for food in food_list %}
+      <li>
+        <p>{{ food.foodName }}</p>      
+        <p>         price:  ${{food.price}} </p>
+        <p>         Food Type: {{ food.typeID}} </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no foods now.</p>
+    {% endif %}       
+{% endblock %}
